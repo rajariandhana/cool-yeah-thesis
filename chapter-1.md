@@ -29,10 +29,20 @@ opsi:
 ## 1.2 Problem Statement
 Based on the background above, this research aims to address the following problems:
 1. How to design a backend system that supports real-time communication between participants.
-2. How can a communication protocol be design in accordance with the flow of the platform's ice-breaking Bingo networking game.
+2. How can a communication protocol be designed in accordance with the flow of the platform's ice-breaking Bingo networking game.
 
 ## 1.3 Objectives
+To design and implement a backend system that supports real-time interaction in the HereToo hybrid networking platform.
+1. Research technologies used for backend architecture.
+2. Design the backend architecture according to the platform's requirements.
+3. Develop the backend architecture.
+4. Evaluate.
 
 ## 1.4 Scope and Limitation
+[TODO: consider only talking about scope w/o limitation]
+1. Backend architecture.
+2. REST API.
+3. WebSocket.
 
 ## 1.5 Benefits
+The TFOM community discovered possible solutions for hybrid meetings through HereToo platform, finds what works and what does not in the aspect of social interaction between participants. [TODO: benefit in technological aspects]
