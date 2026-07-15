@@ -20,6 +20,8 @@ grouped accordingly and put into breakout rooms where they participate in a Bing
 
 The platform sets in a hybrid form and requires a robust backend as the backbone of the application. It must be able to communicate between participants instantaneously in a real time manner to ensure a seamless communication.
 
+[TODO: bahas 3801 also]
+
 opsi:
 1. bahas social aspect in hybrid meeting -> solution nya si HereToo
 2. si TFOM lagi ngebuat applikasi, dan butuh solusi backend kayak apa:
