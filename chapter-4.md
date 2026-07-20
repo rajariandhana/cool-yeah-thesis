@@ -222,4 +222,98 @@ async def join_game(
     return {"game": {"id": game.id}, "player": player}
 ```
 
+## Game Session
 
+### Starting Game Session
+[SOURCE CODE X.X] manages the lifecycle of a game by updating its status and recording when gameplay begins. The `POST /{game_id}/status` endpoint retrieves the specified game from the database, validates that it exists, and checks that the requested status is one of the allowed values (`"OPEN"`, `"CLOSED"`, `"PLAYING"`, or `"FINISHED"`). After updating the game's status and timestamp, it clears all previously generated player matches for that game and calls `compute_and_persist_matches_for_game()` to generate and save a new set of player matches based on the current participants. This ensures that the matchmaking data remains consistent whenever the game status changes. The `POST /{game_id}/start` endpoint is responsible for officially starting a game by setting its status to `"PLAYING"`, recording the start time (`time_start`), updating the modification timestamp, and saving the changes to the database. Both endpoints return the updated game information to confirm that the requested operation was completed successfully.
+
+```py routes/games.py
+@gamesRouter.post("/{game_id}/status")
+def update_game_status(
+    body: dict = Body(...),
+    game_id: str = Path(..., description="The ID of the game"),
+    db: Session = Depends(get_db),
+):
+    game = db.query(models.Game).filter(models.Game.id == game_id).first()
+    if not game:
+        return {"message": "Game not found"}
+
+    status = body.get("status", game.status)
+    if status not in ["OPEN", "CLOSED", "PLAYING", "FINISHED"]:
+        return {"message": "Invalid status"}
+
+    game.status = status
+    game.updated_at = datetime.now()
+    db.commit()
+    db.refresh(game)
+
+    db.query(Player).filter(Player.game_id == game_id).update({Player.matches: []})
+    db.commit()
+
+    compute_and_persist_matches_for_game(db, game_id, k=5)
+
+    return {"message": "Game status updated", "game": game}
+
+@gamesRouter.post("/{game_id}/start")
+def start_game(
+    game_id: str = Path(..., description="The ID of the game"),
+    db: Session = Depends(get_db),
+):
+    game = db.query(models.Game).filter(models.Game.id == game_id).first()
+    if not game:
+        return {"message": "Game not found"}
+
+    game.status = "PLAYING"
+    game.time_start = datetime.now()
+    game.updated_at = datetime.now()
+    db.commit()
+    db.refresh(game)
+
+    return {"message": "Game started", "game": game}
+```
+
+### Updating Player Scores
+[SOURCE CODE X.X] defines the `POST /pair-add-score` endpoint, it updates the scores of two players after they successfully complete a match. It first retrieves both the player and their opponent from the database using the provided IDs and returns a `404` error if either record does not exist. The endpoint then increases both players' scores by the predefined `MATCH` value while ensuring that neither score exceeds the maximum `BINGO` score. If a player reaches the maximum score for the first time, the current timestamp is recorded as `time_finished`, allowing the application to track when they completed the game. The endpoint also updates each player's `interacted_with` list by recording the other player's ID, ensuring that previous interactions are tracked and duplicate entries are avoided. Finally, it updates the modification timestamps, commits all changes to the database, refreshes the player objects, and returns the updated records for both participants.
+
+```py routes/players.py
+@playersRouter.post("/pair-add-score")
+def increase_pair_score(
+    body: dict = Body(...),
+    db: Session = Depends(get_db)
+):
+    player = db.query(Player).filter(Player.id == body.get("player_id")).first()
+    opponent = db.query(Player).filter(Player.id == body.get("opponent_id")).first()
+    if not player or not opponent:
+        raise HTTPException(status_code=404, detail="Player or opponent not found")
+
+    player.score = min(player.score + MATCH, BINGO)
+    opponent.score = min(opponent.score + MATCH, BINGO)
+    if player.score == BINGO and not player.time_finished:
+        player.time_finished = datetime.now()
+    if opponent.score == BINGO and not opponent.time_finished:
+        opponent.time_finished = datetime.now()
+    
+    if opponent.id:
+        current = player.interacted_with or []
+        if opponent.id not in current:
+            current.append(opponent.id)
+            player.interacted_with = current
+    if player.id:
+        current = opponent.interacted_with or []
+        if player.id not in current:
+            current.append(player.id)
+            opponent.interacted_with = current
+    
+    player.updated_at = datetime.now()
+    opponent.updated_at = datetime.now()
+    db.flush()
+    db.commit()
+    db.refresh(player)
+    db.refresh(opponent)
+    return {"player": player, "opponent": opponent}
+```
+
+### Ending a Game Session
+To end the game the host's client side will call the same `POST /{game_id}/status` route previously defined in [SOURCE CODE X.X]. The only difference is the host will provide the `"FINISHED"` value indicating that the game is finished whether because all players have finished playing or the host ends it on their own accords.
+
+## Real Time Updates With WebSockets
