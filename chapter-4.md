@@ -1,8 +1,7 @@
 # CHAPTER 4 RESULTS AND DISCUSSION
 
 ## 4.1 Backend Starting Point Implementation
-[maybe change the definition]
-The root of the backend starts from `main.py` file. All application that utilizes FastAPI as their backbone imports and calls the `FastAPI()` function before defining routes. The convention of using a `/api` prefix is added to isolate API traffic from static frontend assets. To maintain a clean structure, each router is grouped into its own file inside the `routes` directory and is added another prefix according to the group. For example the routes for accessing the players are created as `playersRouter` within the `routes/players.py` file. It also uses the `/players` prefix. Suppose a route called `/test` is defined under the players routers, then it will generate a full URI endpoint as `/api/players/ping` that can be accessed.
+The root of the backend starts from `main.py` file [SOURCE CODE X.X]. All application that utilizes FastAPI as their backbone imports and calls the `FastAPI()` function before defining routes. The convention of using a `/api` prefix is added to isolate API traffic from static frontend assets. To maintain a clean structure, each router is grouped into its own file inside the `routes` directory and is added another prefix according to the group. For example the routes for accessing the players are created as `playersRouter` within the `routes/players.py` file. It also uses the `/players` prefix. Suppose a route called `/test` is defined under the players routers, then it will generate a full URI endpoint as `/api/players/test` that can be accessed.
 
 ```py main.py
 from fastapi import FastAPI
@@ -64,7 +63,7 @@ def get_db():
 ```
 
 ### 4.1.3 Accessing User
-The frontend of the platform utilizes Zoom Software Development Kit (SDK) to access interanal Zoom functionality. When requests comes from the frontend it will provide a request header with `role` key that determines whether it comes from a zoom client or not and whether it is the host or meeting participants. `get_db()` now can be used to bypass requests and retrieve the correct user type.
+The frontend of the platform utilizes Zoom Software Development Kit (SDK) to access interanal Zoom functionality. This allows for the platform to use openly accessible Zoom functionality like managing participants, creating breakout rooms, and even assigning certain participants to a certain breakout room.. When requests comes from the frontend it will provide a request header with `role` key that determines whether it comes from a zoom client or not and whether it is the host or meeting participants. `get_db()` now can be used to bypass requests and retrieve the correct user type.
 ```py utils/auth.py
 PARTICIPANT_ZOOM = "PARTICIPANT_ZOOM"
 PARTICIPANT_WEB = "PARTICIPANT_WEB"
