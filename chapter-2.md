@@ -6,39 +6,15 @@ https://doi.org/10.1088/2514-3433/acfcb6
 
 Previous literature study by TFOM community provided really great insight on possible solutions for hybrid meetings each provided their own strengths and weaknesses.
 
-[Disadvantages of Physical Meetings]
+### 2.1.1 Disadvantages of Physical Meetings
 The significant disadvantage of current physical meetings like conferences are without doubt the sustainability aspect. When participants are required to attend physically, carbon footprints are often neglected. With most vehicles still depend on burning fossil fuels, each participant in each meeting could cost an average of 1–3 tons CO2e for them to travel. It needs to be just 2.3 tons to reach The Paris Agreement that targets to limiting global warming by 2030 and is impossible to achieve when long-distance travel are required. Aside of environmental issues, accessiblity must also be addressed. An individual's disablity, fincancial problems, and geopolitical problems often becomes a factor that makes physical conferences not an option for some people. Physical conferences also tend to lack inclusivity, making people feel safe and welcomed. Safety of junior researchers have been the recent concern of physical conferences, especially for females. While online conferences solves the problem of carbon footprint, accessibility, and safety, online solutions are often less favored as they lack the human connection.
 
-[Current Solutions]
+### 2.1.2 Current Solutions
+By introducing a virtual 3D space, participants could move around the room and interact with each other imitating physical meetings. Instead of showing their actual faces, participants would choose and create their own avatar to represent themselves. One big room can be created as a space where all participants could be at to meet and network with anyone. Smaller rooms can be created to host smaller meetings with their own agendas. It also makes presenting a 3D model much easier when participants are already in the same 3D space.
 
-[DRAFT: sentences from TFOM paper]
-- unstructured sessions such as games and shared breaks can be used to keep the online participants connected
-- virtual reality to provide a social venue and exhibition space
-- The conference organizers were keen to provide an area where attendees could interact
-- The venue could be accessed via a computer or VR headset
-- What worked well: The exhibition space was particularly successful at encouraging people to attend the virtual socials, and the models and exhibits were good ice breakers for seeding conversation.
-- Limitations: A few participants were not able to access the virtual space from their computer, due to struggles with installing the software. This could have been solved by stronger encouragement to install the software in advance, or adopting a platform that was browser-based.
-- The most promising of these, Extended Reality (XR), brings huge improvements in interaction quality, particularly in making users feel connected and making them feel like they are really ‘there,’ while also opening up opportunities to go beyond what is possible in person.
-- But the biggest issue with XR spaces is that most people’s experience with them is via a backwards compatibility option (like a laptop or phone), and much like a video call where 90% of the attendees are dialed in by landline, the benefits of the better technology are not apparent unless the majority of users are connected using the new approach. The technology is also new to many, causing its own learning curve issues and triggering risk aversion strategies when doing larger events. In short, while XR conferences can solve many of the issues we have with online meetings, they unfortunately (much like video call conferences and meetings before the pandemic) currently suffer from a critical mass problem.
-- Already one can have a decent fully-functioning standalone headset for a few hundred USD, or a spectacular headset with a supporting PC for a few thousand
+While 3D space brings interactivity just like in physical medium, in execution participants expressed their struggle when installing the software. They needed additional time to be familiar with the platform. Additional expense must also be spent when using hardware device like VR headsets for a more immersive experience.
 
-// TFOM conducted case studies in the design of online and hybrid meetings.
-
-There are features that have been implemented in order to [add/place/fit/fix/mimick/...] the missing human connection.
-
-By introducing a virtual 3D space, participants could move around the room and interact with each other [just like: find good synonym] in physical meetings. Instead of showing their actual faces, participants would choose and create their own avatar to represent themselves. One big room can be created as a space where all participants could be at to meet and network with anyone. Smaller rooms can be created to host smaller meetings with their own agendas. It also makes presenting a 3D model much easier when participants are already in the same 3D space.
-
-While this brings interactivity just like in physical medium, in execution participants expressed their struggle when installing the software. They needed additional time to be familiar with the platform. Additional expense must also be spent when using hardware device like VR headsets for a more immersive experience.
-
-Another feature that 
-
-While this bridges the awkward social interaction current meetings
-TFOM XR
-
-browser based
-
-...blablabla... thus it is necessary for... requires...
-easy to install, plug and play kind off
+Participants that are set in a more relaxed environment are more likely to interact with each other. Game sessions and ice breaking sessions can be used to maintain connectivity between participants even for those in the online setting. Participants who are matched with those who are similar to them, such as having the same expertise or interests, can use those as a foundation to interact with.The chance of them to interact with each other after the meeting or event had ended becomes more probable.
 
 ## 2.2 Theoretical Foundation
 
