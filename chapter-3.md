@@ -4,7 +4,7 @@
 
 ### 3.1.1 Project Flow
 The development of the platform's overall system including the backend utilizes the Agile method following the requirements set by the DECO3801 course. Using this method the project is split into 3 sprints called as "Interims" over the span of 13 weeks where each interim has their different set of goals.
-[IMAGE]
+![Project Timeline](assets/flowchart-timeline.png)
 
 ### 3.1.2 Materials and Equipment Used
 [Change to table]
@@ -17,7 +17,9 @@ While waiting for the remaining participants to join the website, existing parti
 
 ## 3.2 System Architecture
 The platform has 2 sides of users, a host side and a player side. The host can manage the meeting and the players while the players can network with each other. After a host creates a meeting it creates a game session with a game code that the participants can use to join.
-[INSERT: flowchart of the app for host and player]
+![Host Side Flowchart](assets/flowchart-host.png)
+![Participant Side Flowchart](assets/flowchart-participant.png)
+![Tech-Stack Connectivity Diagram](assets/flowchart-connectivity.png)
 
 ### Backend Routes Requirements
 To support the required features of the platform the following routes are designed to be built.
