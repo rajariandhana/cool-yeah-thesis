@@ -1,3 +1,11 @@
 # Abstract
 
-Keywords:
+[INDONESIAN]
+Proyek ini menyajikan desain dan implementasi sistem backend untuk HereToo, platform jaringan hibrida yang dikembangkan di bawah komunitas The Future of Meetings (TFOM) untuk meningkatkan interaksi sosial antara peserta pertemuan tatap muka dan daring. Studi ini membahas kebutuhan akan komunikasi waktu nyata dan protokol komunikasi yang mendukung aktivitas jaringan berbasis Bingo pada platform tersebut. Backend dikembangkan menggunakan FastAPI untuk menyediakan API REST dan manajemen basis data, sementara teknologi WebSocket memungkinkan komunikasi tanpa hambatan antara host dan peserta. Sistem yang diimplementasikan mendukung manajemen permainan, pencocokan pemain, pelacakan skor, dan sinkronisasi peristiwa waktu nyata, memberikan pengalaman interaktif yang lancar selama pertemuan hibrida. Proyek ini menunjukkan bahwa menggabungkan API REST dengan WebSocket dapat secara efektif mendukung aplikasi jaringan hibrida interaktif, sementara pekerjaan selanjutnya harus fokus pada pengembangan frontend, pengujian skalabilitas, dan mekanisme keamanan yang lebih kuat.
+
+Kata kunci: Rapat Hibrida, FastAPI, WebSocket
+
+[ENGLISH]
+This project presents the design and implementation of the backend system for HereToo, a hybrid networking platform developed under The Future of Meetings (TFOM) community to improve social interaction between in-person and online meeting participants. The study addresses the need for real-time communication and a communication protocol that supports the platform's Bingo-based networking activity. The backend was developed using FastAPI to provide REST APIs and database management, while WebSocket technology enables seamless communication between the host and participants. The implemented system supports game management, player matching, score tracking, and real-time event synchronization, providing a seamless interactive experience during hybrid meetings. The project demonstrates that combining REST APIs with WebSockets can effectively support interactive hybrid networking applications, while future work should focus on frontend development, scalability testing, and stronger security mechanisms.
+
+Keywords: Hybrid Meetings, FastAPI, WebSocket
