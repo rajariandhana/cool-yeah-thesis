@@ -1,6 +1,6 @@
 # Foreword
 
-The author would like to thank everyone who supports the author. The full list of people can be viewed on his website [ralfazza.com](https://ralfazza.com/cool-yeah-thesis/foreword).
+The author would like to thank everyone who supports the author which can be viewed on his website [ralfazza.com/cool-yeah-thesis/foreword](https://ralfazza.com/cool-yeah-thesis/foreword).
 
 [IDEA]
 - create ralfazza.com/cool-yeah-thesis/foreword

@@ -13,6 +13,7 @@ consider:
 - "Backend" first to show that it focuses on backend more than the platform itself
 - "Using FastAPI", tells what method used
 - HERE TOO: Hybrid Meetings Icebreaking Solution with WebSocket Based Game - Backend Design and Implementation
+- HERE TOO: FASTAPI-BASED BACKEND FOR HYBRID MEETINGS
 
 ```md
 # CHAPTER 1 INTRODUCTION
