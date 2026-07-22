@@ -36,13 +36,10 @@ Websocket protocol allows client and server to send and receive data at real tim
 
 In a chat room scenario application, Websocket can be used to ensure real time communications between the users. A room is created using Websocket for the users to join. Suppose we have user 1 and user 2 already established a Websocket connection in a room. When user 1 wants to chat with user 2, user 1 will send the message to the server, validated by them, and forward the message to user 2. When both users leaves the room, the Websocket room is destroyed and the Websocket connection is discontinued.
 
-## FastAPI
-https://books.google.com.au/books?hl=en&lr=&id=XZmGEAAAQBAJ&oi=fnd&pg=PP1&dq=fastapi&ots=4mU_W_r9vB&sig=jFZVpxOoHYKA-kDtaevXVcT1fyE&redir_esc=y#v=onepage&q=fastapi&f=false
+### 2.2.3 FastAPI
+https://link.springer.com/content/pdf/10.1007/978-1-4842-9178-8.pdf
+https://doi.org/10.1007/978-1-4842-9178-8
 
-FastAPI is a web framework in Python created by Sebastian Ramirez for building REST APIs and microservices. FastAPI has it's own 
+FastAPI is a web framework in Python created by Sebastian Ramirez for building REST APIs and microservices. Compared to other web frameworks FastAPI provides an easy way for beginners to create web applications especially having Python as it's programming language. FastAPI routings works by calling the FastAPI class' method decorator that corresponds to an HTTP method, provide it with the route name, and define the method that would process the route's request including it's response as the method's return statement. Not only to define HTTP routes, WebSocket protocols are also integrated within FastAPI. This allows developers to develop real-time web applications that scales.
 
-## SQLAlchemy
-https://books.google.com.au/books?hl=en&lr=&id=XZmGEAAAQBAJ&oi=fnd&pg=PP1&dq=fastapi&ots=4mU_W_r9vB&sig=jFZVpxOoHYKA-kDtaevXVcT1fyE&redir_esc=y#v=onepage&q=fastapi&f=false
-
-TO CONSIDER:
-- is FastAPI and SQLAlchemy necessary? FastAPI is just an application of REST, SQLAlchemy is just ORM
+With FastAPI, database management can be handled by Object-Relational Mappers (ORM) like SQLAlchemy. Instead of writing raw Structured Query Language (SQL) queries, each row in a table corresponds to an Python object that can be manipulated. Create Read Update Delete (CRUD) operations between table relations are executed by calling Python methods.
